@@ -1,5 +1,5 @@
 - name: deploy apache
-  hosts: apps
+  hosts: 10.8.22.200
   gather_facts: false
   become: true
   tasks:

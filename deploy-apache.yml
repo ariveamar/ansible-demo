@@ -2,6 +2,9 @@
   hosts: 10.8.22.200
   gather_facts: false
   become: true
+  ansible_become_method: su
+  ansible_become_user: test
+  ansible_become_exe: 'sudo -p "Password: " su -'
   tasks:
   - name: install apache
     yum:

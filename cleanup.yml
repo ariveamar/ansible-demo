@@ -16,3 +16,13 @@
           service: http
           permanent: true
           state: disabled
+      - name: setting up iptables runtime config
+        firewalld:
+          service: http
+          state: enabled
+        notify:
+        - reload firewalld
+
+    handlers:
+      - name: reload firewalld
+        service: name=firewalld state=reloaded

@@ -11,3 +11,8 @@
         file:
           path: /var/www/html
           state: absent
+      - name: setting up iptables permanent config
+        firewalld:
+          service: http
+          permanent: true
+          state: disabled

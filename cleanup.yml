@@ -21,8 +21,8 @@
           service: http
           state: enabled
         notify:
-        - reload firewalld
+        - restart firewalld
 
     handlers:
-      - name: reload firewalld
-        service: name=firewalld state=reloaded
+      - name: restart firewalld
+        service: name=firewalld state=restarted enabled=yes
